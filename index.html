@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Servicios de Reparaciones Internas - Generador de PDF</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Incluir jsPDF y jsPDF-AutoTable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora de Servicios de Reparaciones Internas</h1>
+            <p class="subtitle">Ingrese las cantidades para calcular los valores totales y generar un PDF</p>
+        </header>
+        
+        <div class="app-description">
+            Esta aplicación le permite ingresar las cantidades de cada servicio y calcular automáticamente los valores totales. Cuando haya terminado, puede generar un PDF con la tabla completa de resultados.
+        </div>
+        
+        <div class="instructions">
+            <h3>Instrucciones de uso:</h3>
+            <ul>
+                <li>Ingrese la cantidad para cada servicio en la columna "Cantidad"</li>
+                <li>El valor total se calculará automáticamente</li>
+                <li>El total general se actualizará en tiempo real</li>
+                <li>Haga clic en "Generar PDF" para crear un documento con la tabla completa</li>
+                <li>Use "Reiniciar" para borrar todas las cantidades ingresadas</li>
+            </ul>
+        </div>
+        
+        <div class="table-container">
+            <table id="services-table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descripción</th>
+                        <th>Valor inc. IVA</th>
+                        <th>Cantidad</th>
+                        <th>Valor Total</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Los datos se llenarán con JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="summary">
+            <div>
+                <h3>Total:</h3>
+                <div class="total-amount" id="total-amount">$0.00</div>
+            </div>
+            <div>
+                <p>Total de items con cantidad: <span id="items-count">0</span></p>
+                <p>Fecha: <span id="current-date"></span></p>
+            </div>
+        </div>
+        
+        <div class="buttons-container">
+            <button class="btn btn-generate" id="generate-pdf">
+                <span class="icon">📄</span>
+                Generar PDF
+            </button>
+            <button class="btn btn-reset" id="reset-form">
+                <span class="icon">🔄</span>
+                Reiniciar
+            </button>
+        </div>
+        
+        <footer>
+            <p>Aplicación de cálculo de servicios | Generador de PDF</p>
+            <p>Los valores mostrados ya incluyen IVA</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
